@@ -136,6 +136,10 @@ const enter = (i) => {
     border-radius: 50px;
     margin: 0 20px;
     cursor: pointer;
+
+    &:hover{
+      background: rgba(0, 0, 0, 0.4);
+    }
   }
   h2{
     position: absolute;
