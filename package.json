@@ -12,6 +12,7 @@
   "dependencies": {
     "@vueuse/core": "^8.4.2",
     "less": "^4.1.2",
+    "swiper": "^8.1.6",
     "vanilla-tilt": "^1.7.2",
     "vite-plugin-inspect": "^0.5.0",
     "vue": "^3.2.33",

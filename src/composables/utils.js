@@ -34,3 +34,4 @@ export const Type = {
     return this.isObject(val) && this.isFunction(val.then) && this.isFunction(val.catch)
   },
 }
+
