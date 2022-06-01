@@ -3,7 +3,7 @@ const n = ref(0)
 const n1 = ref('A')
 const n2 = ref('a')
 const isEnd = ref(true)
-const { Space } = useMagicKeys()
+const { Space, Enter } = useMagicKeys()
 const speakNum = ref(true)
 const step = ref(1)
 onMounted(() => {
@@ -29,10 +29,25 @@ watchEffect(() => {
     n.value = nValue
   }
 })
+
+const word = ref('')
+const translate = () => {
+  const u = new window.SpeechSynthesisUtterance(word.value)
+  window.speechSynthesis.speak(u)
+}
+
+watchEffect(() => {
+  if (Enter.value)
+    translate()
+})
 </script>
 
 <template>
   <h1 w="100%" h="100%" text-9xl flex flex-col justify-center items-center color-red font-black>
+    <div flex>
+      <input v-model="word" border-1 color-green placeholder="word" type="text">
+      <button i-mdi-vuejs w-40 h-40 @click="translate" />
+    </div>
     <div>
       <div>
         {{ n }}
